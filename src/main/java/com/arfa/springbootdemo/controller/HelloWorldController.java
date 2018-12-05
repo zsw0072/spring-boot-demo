@@ -47,7 +47,7 @@ public class HelloWorldController {
     }
 
     @RequestMapping("/findAll")
-    public List<User> findAllUsers(){
+    public List<User> findAll(){
         return userService.findAll();
     }
 
