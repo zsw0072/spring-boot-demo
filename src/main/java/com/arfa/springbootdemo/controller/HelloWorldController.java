@@ -4,6 +4,8 @@ import com.arfa.springbootdemo.entity.User;
 import com.arfa.springbootdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -38,8 +40,9 @@ public class HelloWorldController {
         return null;
     }
 
-    @RequestMapping("/addUser")
-    public void addUser(String username,String password){
+    @RequestMapping(value = "/addUser",method = RequestMethod.GET)
+    public void addUser(@RequestParam(value = "username") String username,
+                        @RequestParam(value = "password")String password){
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
