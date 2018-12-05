@@ -45,4 +45,10 @@ public class HelloWorldController {
         user.setPassword(password);
         userService.addUser(user);
     }
+
+    @RequestMapping("/findAll")
+    public List<User> findAllUsers(){
+        return userService.findAll();
+    }
+
 }

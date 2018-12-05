@@ -12,4 +12,6 @@ public interface UserService {
     User findUserById(User user);
 
     User addUser(User user);
+
+    List<User> findAll();
 }
