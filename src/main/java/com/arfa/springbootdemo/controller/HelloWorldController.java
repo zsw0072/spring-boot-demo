@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/wechat")
 public class HelloWorldController {
 
     @Autowired
@@ -40,7 +41,7 @@ public class HelloWorldController {
         return null;
     }
 
-    @RequestMapping(value = "/addUser",method = RequestMethod.GET)
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public void addUser(@RequestParam(value = "username") String username,
                         @RequestParam(value = "password")String password){
         User user = new User();
